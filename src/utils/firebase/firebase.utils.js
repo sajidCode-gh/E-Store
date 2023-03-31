@@ -68,8 +68,14 @@ export const createUserDocumentFromAuth = async (
     return userDocRef;
 };
 
-export const signInAuthWithUserAndPassward = async (email, passward) => {
+export const createAuthWithUserAndPassward = async (email, passward) => {
     if (!email || !passward) return;
 
     return await createUserWithEmailAndPassword(auth, email, passward);
+};
+
+export const signInAuthWithUserAndPassward = async (email, passward) => {
+    if (!email || !passward) return;
+
+    return await signInWithEmailAndPassword(auth, email, passward);
 };
