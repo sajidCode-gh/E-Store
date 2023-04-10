@@ -1,23 +1,35 @@
 import { useContext } from "react";
 import { cartContext } from "../../contexts/cart.context";
+import CheckoutItem from "../../components/checkout-item/checkout-item.component";
+
+import "./checkout.styles.scss";
 
 const Checkout = () => {
-    const { cartItems } = useContext(cartContext);
+    const { cartItems, cartTotal } = useContext(cartContext);
 
     return (
-        <div>
-            {cartItems.map((item) => (
-                <div key={item.id}>
-                    <div>Name: {item.name}</div>
-                    <div>
-                        quantity:
-                        <button onClick={() => +item.quantity}>+</button>
-                        {item.quantity}
-                        <button onClick={() => -item.quantity}>-</button>
-                    </div>
-                    <div>Price: {item.price * item.quantity}</div>
+        <div className="checkout-container">
+            <div className="checkout-header">
+                <div className="header-block">
+                    <span>Product</span>
                 </div>
+                <div className="header-block">
+                    <span>Description</span>
+                </div>
+                <div className="header-block">
+                    <span>Quantity</span>
+                </div>
+                <div className="header-block">
+                    <span>Price</span>
+                </div>
+                <div className="header-block">
+                    <span>Remove</span>
+                </div>
+            </div>
+            {cartItems.map((cartItem) => (
+                <CheckoutItem key={cartItem.id} cartItem={cartItem} />
             ))}
+            <div className="total">TOTAL: {cartTotal}</div>
         </div>
     );
 };
