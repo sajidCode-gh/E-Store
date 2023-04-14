@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import Button from "./../button/button.component";
 import "./product-card.styles.scss";
-import { UserContext } from "../../contexts/user.context";
 import { cartContext } from "../../contexts/cart.context";
 
 export function ProductCard({ product }) {

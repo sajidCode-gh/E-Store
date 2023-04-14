@@ -1,5 +1,5 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
+// import { initializeApp } from "firebase/app";
 import {
     getAuth,
     GoogleAuthProvider,
@@ -25,17 +25,17 @@ import {
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-const firebaseConfig = {
-    apiKey: "AIzaSyA4V3-8dioUO2S1c2_eU_wcTWqtjSjQYQo",
-    authDomain: "e-store-db-c7529.firebaseapp.com",
-    projectId: "e-store-db-c7529",
-    storageBucket: "e-store-db-c7529.appspot.com",
-    messagingSenderId: "140299259628",
-    appId: "1:140299259628:web:3f5337d720b3c071991fc9",
-};
+// const firebaseConfig = {
+//     apiKey: "AIzaSyA4V3-8dioUO2S1c2_eU_wcTWqtjSjQYQo",
+//     authDomain: "e-store-db-c7529.firebaseapp.com",
+//     projectId: "e-store-db-c7529",
+//     storageBucket: "e-store-db-c7529.appspot.com",
+//     messagingSenderId: "140299259628",
+//     appId: "1:140299259628:web:3f5337d720b3c071991fc9",
+// };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+// const app = initializeApp(firebaseConfig);
 
 const googleProvider = new GoogleAuthProvider();
 

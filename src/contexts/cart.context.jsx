@@ -2,12 +2,12 @@ import { createContext, useEffect, useState } from "react";
 
 const addItems = (cartItems, productToAdd) => {
     const isProductExist = cartItems.find(
-        (cartItem) => cartItem.id == productToAdd.id
+        (cartItem) => cartItem.id === productToAdd.id
     );
 
     if (isProductExist) {
         return cartItems.map((cartitem) => {
-            return cartitem.id == productToAdd.id
+            return cartitem.id === productToAdd.id
                 ? { ...cartitem, quantity: cartitem.quantity + 1 }
                 : { ...cartitem };
         });
@@ -18,15 +18,15 @@ const addItems = (cartItems, productToAdd) => {
 
 const RemoveItems = (cartItems, productToRemove) => {
     const isProductExist = cartItems.find(
-        (item) => item.id == productToRemove.id
+        (item) => item.id === productToRemove.id
     );
 
-    if (isProductExist.quantity == 1) {
+    if (isProductExist.quantity === 1) {
         return cartItems.filter((item) => item.id !== productToRemove.id);
     }
 
     return cartItems.map((item) => {
-        return item.id == productToRemove.id
+        return item.id === productToRemove.id
             ? { ...cartItems, quantity: item.quantity - 1 }
             : {};
     });
@@ -34,7 +34,7 @@ const RemoveItems = (cartItems, productToRemove) => {
 
 const clearItems = (cartItems, productToClear) => {
     const isProductExist = cartItems.find(
-        (item) => item.id == productToClear.id
+        (item) => item.id === productToClear.id
     );
 
     if (isProductExist) {
