@@ -11,6 +11,8 @@ import { cartContext } from "../../contexts/cart.context";
 const CartDropdown = () => {
     const { cartItems } = useContext(cartContext);
 
+    console.log(cartItems);
+
     const navigate = useNavigate();
 
     const navigateCheckout = () => {
