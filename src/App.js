@@ -9,7 +9,7 @@ import {
     onAuthChangedListner,
     createUserDocumentFromAuth,
 } from "./utils/firebase/firebase.utils";
-import { setCurrentUser } from "./store/user/user.actions";
+import { setCurrentUser } from "./store/user/user.reducer";
 import { useDispatch } from "react-redux";
 
 function App() {
@@ -20,7 +20,13 @@ function App() {
             if (user) {
                 createUserDocumentFromAuth(user);
             }
-            dispatch(setCurrentUser(user));
+
+            const pickedUser = (({ accessToken, email }) => ({
+                accessToken,
+                email,
+            }))(user);
+
+            dispatch(setCurrentUser(pickedUser));
         });
 
         return unsubscribe;
