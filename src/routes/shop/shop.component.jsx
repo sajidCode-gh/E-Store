@@ -5,15 +5,15 @@ import CategoriesPreview from "../categories-preview/categories-preview.componen
 import Category from "../categrory/category.component";
 import { useEffect } from "react";
 import { getCategoriesData } from "../../utils/firebase/firebase.utils";
-import { setCategoriesArrays } from "../../store/categories/category.actions";
 import { useDispatch } from "react-redux";
+import { setCategories } from "../../store/categories/category.reducer";
 
 function Shop() {
     const dispatch = useDispatch();
     useEffect(() => {
         const getCategories = async () => {
             const categoryArrays = await getCategoriesData();
-            dispatch(setCategoriesArrays(categoryArrays));
+            dispatch(setCategories(categoryArrays));
         };
 
         getCategories();
